@@ -1842,3 +1842,61 @@ struct dram_timing_info dram_timing = {
 	.ddrphy_pie_num = ARRAY_SIZE(ddr_phy_pie),
 	.fsp_table = { 3000, 400, 100,},
 };
+
+void set_dram_timings_1gb(void)
+{
+       dram_timing.ddrc_cfg[5].val = 0x2d0087;
+       dram_timing.ddrc_cfg[21].val = 0x8d;
+       dram_timing.ddrc_cfg[42].val = 0xf070707;
+       dram_timing.ddrc_cfg[58].val = 0x60012;
+       dram_timing.ddrc_cfg[73].val = 0x13;
+       dram_timing.ddrc_cfg[83].val = 0x30005;
+       dram_timing.ddrc_cfg[98].val = 0x5;
+}
+
+void set_dram_timings_4gb(void)
+{
+       dram_timing.ddrc_cfg[2].val = 0xa3080020;
+       dram_timing.ddrc_cfg[37].val = 0x17;
+       dram_timing.fsp_msg[0].fsp_cfg[8].val = 0x310;
+       dram_timing.fsp_msg[0].fsp_cfg[20].val = 0x3;
+       dram_timing.fsp_msg[1].fsp_cfg[9].val = 0x310;
+       dram_timing.fsp_msg[1].fsp_cfg[21].val = 0x3;
+       dram_timing.fsp_msg[2].fsp_cfg[9].val = 0x310;
+       dram_timing.fsp_msg[2].fsp_cfg[21].val = 0x3;
+       dram_timing.fsp_msg[3].fsp_cfg[10].val = 0x310;
+       dram_timing.fsp_msg[3].fsp_cfg[22].val = 0x3;
+}
+
+void set_dram_timings_rev7(void)
+{
+       dram_timing.ddrc_cfg[10].val = 0x55004d;
+       dram_timing.ddrphy_cfg[64].val = 0x618;
+       dram_timing.ddrphy_cfg[65].val = 0x618;
+       dram_timing.ddrphy_cfg[66].val = 0x618;
+       dram_timing.ddrphy_cfg[67].val = 0x618;
+       dram_timing.ddrphy_cfg[68].val = 0x618;
+       dram_timing.ddrphy_cfg[69].val = 0x618;
+       dram_timing.ddrphy_cfg[70].val = 0x618;
+       dram_timing.ddrphy_cfg[71].val = 0x618;
+       dram_timing.ddrphy_cfg[72].val = 0x63;
+       dram_timing.ddrphy_cfg[73].val = 0x63;
+       dram_timing.ddrphy_cfg[74].val = 0x63;
+       dram_timing.ddrphy_cfg[75].val = 0x63;
+       dram_timing.ddrphy_cfg[76].val = 0x63;
+       dram_timing.ddrphy_cfg[77].val = 0x63;
+       dram_timing.ddrphy_cfg[78].val = 0x63;
+       dram_timing.ddrphy_cfg[79].val = 0x63;
+       dram_timing.ddrphy_cfg[80].val = 0x63;
+       dram_timing.ddrphy_cfg[81].val = 0x63;
+       dram_timing.fsp_msg[0].fsp_cfg[3].val = 0x3c30;
+       dram_timing.fsp_msg[0].fsp_cfg[11].val = 0x4d55;
+       dram_timing.fsp_msg[0].fsp_cfg[16].val = 0x4d55;
+       dram_timing.fsp_msg[0].fsp_cfg[23].val = 0x5500;
+       dram_timing.fsp_msg[0].fsp_cfg[29].val = 0x5500;
+       dram_timing.fsp_msg[1].fsp_cfg[3].val = 0x3c30;
+       dram_timing.fsp_msg[1].fsp_cfg[14].val = 0x4d55;
+       dram_timing.fsp_msg[1].fsp_cfg[19].val = 0x4d55;
+       dram_timing.fsp_msg[1].fsp_cfg[26].val = 0x5500;
+       dram_timing.fsp_msg[1].fsp_cfg[32].val = 0x5500;
+}
